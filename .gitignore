@@ -156,11 +156,10 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
-#KSP Specific files
-Dune/Assembly-CSharp.dll
-Dune/UnityEngine.dll
-/Dune/Snippets
-/toolbar.tga
+#Cities Specific files
+Titan/Assembly-CSharp.dll
+Titan/UnityEngine.dll
+/Titan/Snippets
 *.mbm
 *.mu
 *.psd
