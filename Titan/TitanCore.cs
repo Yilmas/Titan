@@ -50,7 +50,7 @@ namespace Titan
 
         public void Awake()
         {
-            MonoBehaviour.DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this);
 
             foreach(ControlModule module in controlModules)
             {
@@ -126,7 +126,7 @@ namespace Titan
                 {
                     try
                     {
-                        foreach(var module in ass.GetTypes().Where(p => p.IsSubclassOf(typeof(ControlModule))).ToList())
+                        foreach (var module in ass.GetTypes().Where(p => p.IsSubclassOf(typeof(ControlModule))).ToList())
                         {
                             Log.Warning("[Titan] Core assembly loaded: " + module.FullName);
                             moduleRegistry.Add(module);
@@ -172,7 +172,6 @@ namespace Titan
             try
             {
                 LoadControlModules();
-                
                 // TODO: Insert load logic here
 
                 foreach(ControlModule module in controlModules)
@@ -202,6 +201,8 @@ namespace Titan
             try
             {
                 LoadDelayedModules();
+
+                // TODO: Insert save logic here
 
                 foreach(ControlModule module in controlModules)
                 {

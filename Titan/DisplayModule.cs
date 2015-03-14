@@ -22,17 +22,18 @@ namespace Titan
             set
             {
                 windowVector = new Vector4
-                (
-                    Math.Min(Math.Max(value.x, 0), Screen.width - value.width),
-                    Math.Min(Math.Max(value.y, 0), Screen.height - value.height),
-                    value.width, value.height
-                );
+                    (
+                        Math.Min(Math.Max(value.x, 0), Screen.width - value.width),
+                        Math.Min(Math.Max(value.y, 0), Screen.height - value.height),
+                        value.width, value.height
+                    );
                 windowVector.x = Mathf.Clamp(windowVector.x, 10 - value.width, Screen.width - 10);
                 windowVector.y = Mathf.Clamp(windowVector.y, 10 - value.height, Screen.height - 10);
             }
         }
 
-        public DisplayModule(TitanCore core) : base(core)
+        public DisplayModule(TitanCore core)
+            : base(core)
         {
             Id = nextId;
             nextId++;
@@ -45,7 +46,7 @@ namespace Titan
 
         protected virtual void WindowGUI(int windowId)
         {
-            if(GUI.Button(new Rect(windowPosition.width - 18,2,16,16), ""))
+            if (GUI.Button(new Rect(windowPosition.width - 18, 2, 16, 16), ""))
             {
                 windowIsHidden = true;
             }
@@ -54,7 +55,10 @@ namespace Titan
 
         public virtual void DrawGUI()
         {
-            windowPosition = GUILayout.Window(Id, windowPosition, WindowGUI, GetName(), WindowOptions());
+            if (runModuleInModes.Contains(Utilities.currentMode) && !windowIsHidden)
+            {
+                windowPosition = GUILayout.Window(Id, windowPosition, WindowGUI, GetName(), WindowOptions());
+            }
         }
 
         public virtual string GetName()
