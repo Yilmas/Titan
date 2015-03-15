@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="ControlModule.cs" />
     <Compile Include="DisplayModule.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="GUITitan.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +68,32 @@
     <Compile Include="TitanSettingsWindow.cs" />
     <Compile Include="TitanTransportControl.cs" />
     <Compile Include="TitanTransportWindow.cs" />
+    <Compile Include="Toolbar\API\ClickEvent.cs" />
+    <Compile Include="Toolbar\API\ClickHandler.cs" />
+    <Compile Include="Toolbar\API\FunctionDrawable.cs" />
+    <Compile Include="Toolbar\API\FunctionVisibility.cs" />
+    <Compile Include="Toolbar\API\IButton.cs" />
+    <Compile Include="Toolbar\API\IDrawable.cs" />
+    <Compile Include="Toolbar\API\IToolbarManager.cs" />
+    <Compile Include="Toolbar\API\IVisibility.cs" />
+    <Compile Include="Toolbar\API\MouseEnterEvent.cs" />
+    <Compile Include="Toolbar\API\MouseLeaveEvent.cs" />
+    <Compile Include="Toolbar\API\MouseMoveEvent.cs" />
+    <Compile Include="Toolbar\API\MouseMoveHandler.cs" />
+    <Compile Include="Toolbar\API\PopupMenuDrawable.cs" />
+    <Compile Include="Toolbar\Button.cs" />
+    <Compile Include="Toolbar\Command.cs" />
+    <Compile Include="Toolbar\CommandCreationCounter.cs" />
+    <Compile Include="Toolbar\GUI\AbstractWindow.cs" />
+    <Compile Include="Toolbar\GUI\EditorLock.cs" />
+    <Compile Include="Toolbar\GUI\IPopupMenuOption.cs" />
+    <Compile Include="Toolbar\GUI\PopupMenu.cs" />
+    <Compile Include="Toolbar\GUI\Separator.cs" />
+    <Compile Include="Toolbar\GUI\WindowList.cs" />
+    <Compile Include="Toolbar\PopupMenuDrawable.cs" />
+    <Compile Include="Toolbar\TitanToolbarManagerControl.cs" />
+    <Compile Include="Toolbar\TitanToolbarManagerWindow.cs" />
+    <Compile Include="Toolbar\Toolbar.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

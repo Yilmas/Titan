@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ICities;
+using UnityEngine;
 
 namespace Titan
 {
@@ -33,6 +34,12 @@ namespace Titan
         public static bool IsNull<T>(this T @object)
         {
             return Equals(@object, null);
+        }
+
+        internal static Vector2 getMousePosition()
+        {
+            Vector3 mousePos = Input.mousePosition;
+            return new Vector2(mousePos.x, Screen.height - mousePos.y).clampToScreen();
         }
 
         public static AppMode currentMode
