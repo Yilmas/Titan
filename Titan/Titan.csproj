@@ -65,6 +65,8 @@
     <Compile Include="TitanDisplayControl.cs" />
     <Compile Include="TitanFPSWindow.cs" />
     <Compile Include="TitanSettingsWindow.cs" />
+    <Compile Include="TitanTransportControl.cs" />
+    <Compile Include="TitanTransportWindow.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

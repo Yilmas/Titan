@@ -10,6 +10,7 @@ namespace Titan
     {
         // Reference point for all ControlModules.
         internal TitanDisplayControl displayControl;
+        internal TitanTransportControl transportControl;
 
         // Internal list of ControlModules.
         private List<ControlModule> controlModules = new List<ControlModule>();
@@ -153,6 +154,7 @@ namespace Titan
             }
 
             displayControl = GetControlModule<TitanDisplayControl>();
+            transportControl = GetControlModule<TitanTransportControl>();
         }
 
         public void LoadDelayedModules()
