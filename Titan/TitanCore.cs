@@ -96,7 +96,7 @@ namespace Titan
                 {
                     if(!(module is DisplayModule))
                     {
-                        if (module.runModuleInModes.Contains(ICities.AppMode.Game))
+                        if (module.runModuleInModes.Contains(Utilities.currentMode))
                         {
                             module.enabled = true;
                         }
@@ -169,6 +169,11 @@ namespace Titan
         {
             Log.Message("[Titan] Core OnLoad()");
 
+            if(GUITitan.skin == null)
+            {
+                GameObject guiLoader = new GameObject("GUILoader", typeof(GUILoader));
+            }
+
             try
             {
                 LoadControlModules();
@@ -227,10 +232,9 @@ namespace Titan
         {
             if (!showGUI) return;
 
-            //TODO: Enable custom skin
-            //GUITitan.LoadSkin(GetControlModule<TitanSettingsWindow>().skinType);
+            GUITitan.LoadSkin(GetControlModule<TitanSettingsWindow>().skinType);
 
-            GUI.skin = null; //GUITitan.skin;
+            GUI.skin = GUITitan.skin;
 
             foreach(DisplayModule module in GetControlModules<DisplayModule>())
             {

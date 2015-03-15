@@ -57,12 +57,14 @@
   <ItemGroup>
     <Compile Include="ControlModule.cs" />
     <Compile Include="DisplayModule.cs" />
+    <Compile Include="GUITitan.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Titan.cs" />
     <Compile Include="TitanCore.cs" />
     <Compile Include="TitanDisplayControl.cs" />
     <Compile Include="TitanFPSWindow.cs" />
+    <Compile Include="TitanSettingsWindow.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
